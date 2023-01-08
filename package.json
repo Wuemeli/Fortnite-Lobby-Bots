@@ -4,10 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node main.js",
+    "discord": "node discordbot.js",
   },
   "author": "Wuemeli",
-  "license": "ISC",
   "dependencies": {
     "axios": "^1.2.2",
     "discord": "^0.8.2",
