@@ -182,11 +182,11 @@ client2.setLoadout = () => {
 //Login
 //1
   await client1.login();
-  console.log(`Logged in as ${client1.user.displayName}`);
   client1.setLoadout
+  console.log(`Logged in as ${client1.user.displayName}`);
 //2
   await client2.login();
-  console.log(`Logged in as ${client2.user.displayName}`);
   client2.setLoadout
+  console.log(`Logged in as ${client2.user.displayName}`);
 
 })();
