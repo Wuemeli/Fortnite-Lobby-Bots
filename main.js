@@ -46,16 +46,28 @@ const handleCommand = async (m) => {
         m.client.party.me.setEmoji(emoji.id);
         m.reply(`Set the emoji to ${emoji.name}!`);
         }
+    } else if (command === 'banner') {
+    const banner = await fetchCosmetic(args.join(' '), 'banner');
+    if (banner) {
+            m.client.party.me.setBanner(banner.id);
+            m.reply(`Set the emoji to ${banner.name}!`);
+            }
     //help
     } else if (command === 'help') {
         m.reply(`HELP COMMANDS Open the Chat to see all the commands!
         !help - Shows this message
+        Cosemtics:
         !skin <skin> - Sets your skin
         !emote <emote> - Sets your emote
         !backpack <backpack> - Sets your backpack
         !emoji <emoji> - Sets your emoji
+        Fun & Util:
         !ready - Sets you to ready
         !unready - Sets you to unready
+        !gift - Gifts the whole Lobby the Item Shop
+        !hide - Hides Members
+        !unhide - Unhides Members
+        Info:
         !discord - Shows the discord link`);
     //Fun & Util
     } else if (command === 'ready') {
@@ -64,6 +76,17 @@ const handleCommand = async (m) => {
     } else if (command === 'unready') {
         m.client.party.me.setReadiness(false);
         m.reply(`Unready!`);
+    } else if (command === 'gift') {
+        m.client.party.me.clearEmote();
+        m.client.party.me.setEmote('EID_NeverGonna');
+        m.reply(`Uhh, did you really think i was going to gift you?`);
+    } else if (command === 'hide') {
+      m.client.party.hideMembers(true);
+      m.reply(`Hiding Members!`);
+    } else if (command === 'unhide') {
+      m.client.party.hideMembers(false);
+      m.reply(`Unhiding Members!`);
+    //Info
     } else if (command === 'discord') {
         m.reply(`Discord: https://discord.gg/https://discord.gg/DEDp2UQUx8`);
       }
@@ -71,105 +94,99 @@ const handleCommand = async (m) => {
 
 //Login and Auth
 
-//Client 1
+//Clients
 (async () => {
-  let auth;
+  let auth1;
   try {
-    auth = { deviceAuth: JSON.parse(await readFile('./deviceAuth.json')) };
+    auth1 = { deviceAuth: JSON.parse(await readFile('./deviceAuth.json')) };
   } catch (e) {
-    auth = { authorizationCode: async () => Client.consoleQuestion('Please enter an authorization code: ') };
+    auth1 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 1: ') };
   }
 
-  const client = new Client({
-        "defaultStatus": config.status,
-        "platform": config.platform,
-        "cachePresences": false,
-        "auth": auth,
-        "partyConfig": {
-          "joinConfirmation": false,
-          "joinability": "OPEN",
-          "maxSize": 16,
-          "chatEnabled": true,
-      },
-        "debug": false
-    });
+    let auth2;
+    try {
+        auth2 = { deviceAuth: JSON.parse(await readFile('./deviceAuth2.json')) };
+    } catch (e) {
+        auth2 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 2: ') };
+    }
 
-  client.setLoadout = () => {
-      client.party.me.setReadiness(false);
-      client.party.me.setOutfit(config.cid);
-      client.party.me.setBackpack(config.bid);
-      client.party.me.setPickaxe(config.pickaxeId);
-      client.party.me.setLevel(config.level);
-      client.party.me.setBanner(config.banner, config.bannerColor);
-      client.party.me.clearEmote();
-  };
+//Bot
 
-  client.on('deviceauth:modfiy', (da) => writeFile('./deviceAuth.json', JSON.stringify(da, null, 2)));
-  client.on('party:member:message', handleCommand);
-  client.on('friend:message', handleCommand);
-
-
-//Friend and Party Managing
-
-client.on("friend:request", (req) => {
-  req.accept()
+//1
+const client1 = new Client({
+  "defaultStatus": config.status,
+  "platform": config.platform,
+  "cachePresences": false,
+  "auth": auth1,
+  "partyConfig": {
+    "joinConfirmation": false,
+    "joinability": "OPEN",
+    "maxSize": 16,
+    "chatEnabled": true,
+},
+  "debug": false
 });
 
-//Client 2
-(async () => {
-  let auth2;
-  try {
-    auth2 = { deviceAuth2: JSON.parse(await readFile('./deviceAuth2.json')) };
-  } catch (e) {
-    auth2 = { authorizationCode: async () => Client.consoleQuestion('Please enter an authorization code for Client2: ') };
-  };
-  
-
-  const client2 = new Client({
-    "defaultStatus": config.status,
-    "platform": config.platform,
-    "cachePresences": false,
-    "auth": auth2,
-    "partyConfig": {
-      "joinConfirmation": false,
-      "joinability": "OPEN",
-      "maxSize": 16,
-      "chatEnabled": true,
-  },
-    "debug": false
+//2
+//1
+const client2 = new Client({
+  "defaultStatus": config.status,
+  "platform": config.platform,
+  "cachePresences": false,
+  "auth": auth2,
+  "partyConfig": {
+    "joinConfirmation": false,
+    "joinability": "OPEN",
+    "maxSize": 16,
+    "chatEnabled": true,
+},
+  "debug": false
 });
 
-  client2.setLoadout = () => {
-      client2.party.me.setReadiness(false);
-      client2.party.me.setOutfit(config.cid);
-      client2.party.me.setBackpack(config.bid);
-      client2.party.me.setPickaxe(config.pickaxeId);
-      client2.party.me.setLevel(config.level);
-      client2.party.me.setBanner(config.banner, config.bannerColor);
-      client2.party.me.clearEmote();
-  };
+//Events
+//1
+  client1.on('deviceauth:created', (da) => writeFile('./deviceAuth.json', JSON.stringify(da, null, 2)));
+  client1.on('party:member:message', handleCommand);
+  client1.on('friend:message', handleCommand);
 
-  client2.on('deviceauth2:create', (da) => writeFile('./deviceAuth2.json', JSON.stringify(da, null, 2)));
+//2
+
+  client2.on('deviceauth:created', (da) => writeFile('./deviceAuth2.json', JSON.stringify(da, null, 2)));
   client2.on('party:member:message', handleCommand);
   client2.on('friend:message', handleCommand);
 
+//Default Lodaut
 
-//Friend and Party Managing
+//1
+client1.setLoadout = () => {
+  client.party.me.setReadiness(false);
+  client.party.me.setOutfit(config.cid);
+  client.party.me.setBackpack(config.bid);
+  client.party.me.setPickaxe(config.pickaxeId);
+  client.party.me.setLevel(config.level);
+  client.party.me.setBanner(config.banner, config.bannerColor);
+  client.party.me.clearEmote();
+};
 
-client2.on("friend:request", (req) => {
-  req.accept()
-});
-
-
+//2
+client2.setLoadout = () => {
+  client.party.me.setReadiness(false);
+  client.party.me.setOutfit(config.cid);
+  client.party.me.setBackpack(config.bid);
+  client.party.me.setPickaxe(config.pickaxeId);
+  client.party.me.setLevel(config.level);
+  client.party.me.setBanner(config.banner, config.bannerColor);
+  client.party.me.clearEmote();
+};
 
 //Login
-
-  await client.login();
-  console.log(`Logged in as ${client.user.displayName}`);
-  client.setLoadout();
+//1
+  await client1.login();
+  console.log(`Logged in as ${client1.user.displayName}`);
+  client1.setLoadout
+//2
   await client2.login();
   console.log(`Logged in as ${client2.user.displayName}`);
-  client2.setLoadout();
+  client2.setLoadout
 
-})();
 })();
