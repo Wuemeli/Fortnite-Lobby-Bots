@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const fs = require('fs');
+const config = require("./config.json");
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -39,4 +40,4 @@ async function checkUserStatus(user) {
   return data.online ? 'Online' : 'Offline';
 }
 
-client.login('your-discord-bot-token-goes-here');
+client.login('config.discordtoken');
