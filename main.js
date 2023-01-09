@@ -52,6 +52,12 @@ const handleCommand = async (m) => {
             m.client.party.me.setBanner(banner.id);
             m.reply(`Set the emoji to ${banner.name}!`);
             }
+    } else if (command === 'purpleskull') {
+            m.client.party.me.setOutfit('CID_030_Athena_Commando_M_Halloween', [{ channel: 'ClothingColor', variant: 'Mat1' }]);
+            m.reply(`Set the skin to Purple Skull Trooper!`);
+    } else if (command === 'pinkghoul') {
+            m.client.party.me.setOutfit('CID_029_Athena_Commando_F_Halloween', [{ channel: 'Material', variant: 'Mat3' }]);
+            m.reply(`Set the skin to Pink Ghoul Trooper!`);
     //help
     } else if (command === 'help') {
         m.reply(`HELP COMMANDS Open the Chat to see all the commands!
@@ -61,12 +67,16 @@ const handleCommand = async (m) => {
         !emote <emote> - Sets your emote
         !backpack <backpack> - Sets your backpack
         !emoji <emoji> - Sets your emoji
+        !banner <banner> - Sets your banner
+        !purpleskull - Sets your skin to Purple Skull Trooper
+        !pinkghoul - Sets your skin to Pink Ghoul Trooper
         Fun & Util:
         !ready - Sets you to ready
         !unready - Sets you to unready
         !gift - Gifts the whole Lobby the Item Shop
         !hide - Hides Members
         !unhide - Unhides Members
+        !level <level> - Sets your level
         Info:
         !discord - Shows the discord link`);
     //Fun & Util
@@ -86,6 +96,9 @@ const handleCommand = async (m) => {
     } else if (command === 'unhide') {
       m.client.party.hideMembers(false);
       m.reply(`Unhiding Members!`);
+    } else if (command === 'level') {
+      m.client.party.me.setLevel(parseInt(content, 10));
+      m.reply(`Set your level to ${content}!`);
     //Info
     } else if (command === 'discord') {
         m.reply(`Discord: https://discord.gg/https://discord.gg/DEDp2UQUx8`);
@@ -460,43 +473,43 @@ client10.setLoadout = () => {
 //Login
 //1
   await client1.login();
-  client1.setLoadout
+  client1.setLoadout();
   console.log(`Logged in as ${client1.user.displayName}`);
 //2
   await client2.login();
-  client2.setLoadout
+  client2.setLoadout();
   console.log(`Logged in as ${client2.user.displayName}`);
 //3
   await client3.login();
-  client3.setLoadout
+  client3.setLoadout();
   console.log(`Logged in as ${client3.user.displayName}`);
 //4
   await client4.login();
-  client4.setLoadout
+  client4.setLoadout();
   console.log(`Logged in as ${client4.user.displayName}`);
 //5
   await client5.login();
-  client5.setLoadout
+  client5.setLoadout();
   console.log(`Logged in as ${client5.user.displayName}`);
 //6
   await client6.login();
-  client6.setLoadout
+  client6.setLoadout();
   console.log(`Logged in as ${client6.user.displayName}`);
 //7
   await client7.login();
-  client7.setLoadout
+  client7.setLoadout();
   console.log(`Logged in as ${client7.user.displayName}`);
 //8
   await client8.login();
-  client8.setLoadout
+  client8.setLoadout();
   console.log(`Logged in as ${client8.user.displayName}`);
 //9
   await client9.login();
-  client9.setLoadout
+  client9.setLoadout();
   console.log(`Logged in as ${client9.user.displayName}`);
 //10
   await client10.login();
-  client10.setLoadout
+  client10.setLoadout();
   console.log(`Logged in as ${client10.user.displayName}`);
 
 })();
