@@ -469,6 +469,88 @@ client10.setLoadout = () => {
   client10.party.me.clearEmote();
 };
 
+//Friend and Party System
+//1	
+client1.on("friend:request", (req) => {
+  req.accept()
+});
+client1.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//2
+client2.on("friend:request", (req) => {
+  req.accept()
+});
+client2.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//3
+client3.on("friend:request", (req) => {
+  req.accept()
+});
+client3.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//4
+client4.on("friend:request", (req) => {
+  req.accept()
+});
+client4.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//5
+client5.on("friend:request", (req) => {
+  req.accept()
+});
+client5.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//6
+client6.on("friend:request", (req) => {
+  req.accept()
+});
+client6.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//7
+client7.on("friend:request", (req) => {
+  req.accept()
+});
+client7.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//8
+client8.on("friend:request", (req) => {
+  req.accept()
+});
+client8.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//9
+client9.on("friend:request", (req) => {
+  req.accept()
+});
+client9.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+//10
+client10.on("friend:request", (req) => {
+  req.accept()
+});
+client10.on('party:member:joined', () => {
+  m.reply(`Hello, to see my Command use !help`);
+  m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+});
+
 
 //Login
 //1
