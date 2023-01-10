@@ -503,6 +503,7 @@ client2.on('party:member:joined', () => {
 client2.on('party:member:left', () => {
   client2.party.setPrivacy(PrivacySetting.PUBLIC);
   client2.setLoadout();
+});
 //3
 //Friend Request
 client3.on("friend:request", (req) => {
