@@ -20,47 +20,63 @@ const handleCommand = async (m) => {
   const args = m.content.slice(1).split(' ');
   const command = args.shift().toLowerCase();
   //Cosmetics
-  if (command === 'outfit' || command === 'skin') {
+  //Skin
+  if (command === 'skin') {
     const skin = await fetchCosmetic(args.join(' '), 'outfit');
     if (skin) {
       m.client.party.me.setOutfit(skin.id);
       m.reply(`Set the skin to ${skin.name}!`);
     } else m.reply(`The skin ${args.join(' ')} wasn't found!`);
-  } else if (command === 'emote' || command === 'dance') {
+  //Emote
+  } else if (command === 'emote') {
     const emote = await fetchCosmetic(args.join(' '), 'emote');
     if (emote) {
       m.client.party.me.setEmote(emote.id);
       m.reply(`Set the emote to ${emote.name}!`);
     } else m.reply(`The emote ${args.join(' ')} wasn't found!`);
-    } else if (command === 'backpack' || command === 'backbling' || command === 'backpack') {
+    //Backpack
+    } else if (command === 'backpack') {
     const backpack = await fetchCosmetic(args.join(' '), 'backpack');
     if (backpack) {
         m.client.party.me.setBackpack(backpack.id);
         m.reply(`Set the backpack to ${backpack.name}!`);
         } else m.reply(`The backpack ${args.join(' ')} wasn't found!`);    
+    //Emoji
     } else if (command === 'emoji') {
     const emoji = await fetchCosmetic(args.join(' '), 'emoji');
     if (emoji) {
         m.client.party.me.setEmoji(emoji.id);
         m.reply(`Set the emoji to ${emoji.name}!`);
-        }
+        } else m.reply(`The emoji ${args.join(' ')} wasn't found!`);
+    //Banner
     } else if (command === 'banner') {
     const banner = await fetchCosmetic(args.join(' '), 'banner');
     if (banner) {
             m.client.party.me.setBanner(banner.id);
             m.reply(`Set the emoji to ${banner.name}!`);
-            }
+            } else m.reply(`The banner ${args.join(' ')} wasn't found!`);
+    //Pickaxe
+    } else if (command === 'pickaxe') {
+    const pickaxe = await fetchCosmetic(args.join(' '), 'pickaxe');
+    if (pickaxe) {
+      m.client.party.me().setPickaxe(pickaxe.id);
+      m.reply(`Set the pickaxe to ${pickaxe.name}!`);
+    } else m.reply (`The pickaxe ${args.join(' ')} wasn't found!`);
+    //Purpleskull
     } else if (command === 'purpleskull') {
             m.client.party.me.setOutfit('CID_030_Athena_Commando_M_Halloween', [{ channel: 'ClothingColor', variant: 'Mat1' }]);
             m.reply(`Set the skin to Purple Skull Trooper!`);
+    //Pinkghoul
     } else if (command === 'pinkghoul') {
             m.client.party.me.setOutfit('CID_029_Athena_Commando_F_Halloween', [{ channel: 'Material', variant: 'Mat3' }]);
             m.reply(`Set the skin to Pink Ghoul Trooper!`);
+    //Chun-Li Mode
     } else if (command === 'chunlimode') {
             m.client.party.hideMembers(true);
             m.client.party.me.setOutfit('CID_028_Athena_Commando_M_ChunLi', [{ channel: 'Material', variant: 'Mat1' }]);
             m.client.party.me.setEmote('EID_PartyHips');
             m.reply(`Have Fun (;!. If you want to stop then type the Command !default`);
+    //Default
     } else if (command === 'default') {
             m.client.party.hideMembers(false);
             m.client.party.me.setReadiness(false);
@@ -70,7 +86,7 @@ const handleCommand = async (m) => {
             m.party.me.setLevel(config.level);
             m.party.me.setBanner(config.banner, config.bannerColor);
             m.reply(`Set the default settings!`);
-    //help
+    //Help
     } else if (command === 'help') {
         m.reply(`HELP COMMANDS Open the Chat to see all the commands!
         !help - Shows this message
@@ -80,6 +96,7 @@ const handleCommand = async (m) => {
         !backpack <backpack> - Sets your backpack
         !emoji <emoji> - Sets your emoji
         !banner <banner> - Sets your banner
+        !pickaxe <pickaxe> - Sets your pickaxe
         !purpleskull - Sets your skin to Purple Skull Trooper
         !pinkghoul - Sets your skin to Pink Ghoul Trooper
         !chunlimode - Activates the SUS Mode
@@ -91,28 +108,39 @@ const handleCommand = async (m) => {
         !hide - Hides Members
         !unhide - Unhides Members
         !level <level> - Sets your level
+        !showpickaxe - Shows your pickaxe
         Info:
         !discord - Shows the discord link`);
     //Fun & Util
+    //Ready
     } else if (command === 'ready') {
         m.client.party.me.setReadiness(true);
         m.reply(`Ready!`);
+    //Unready
     } else if (command === 'unready') {
         m.client.party.me.setReadiness(false);
         m.reply(`Unready!`);
+    //Gift
     } else if (command === 'gift') {
         m.client.party.me.clearEmote();
         m.client.party.me.setEmote('EID_NeverGonna');
         m.reply(`Uhh, did you really think i was going to gift you?`);
+    //Hide
     } else if (command === 'hide') {
       m.client.party.hideMembers(true);
       m.reply(`Hiding Members!`);
+    //Unhide Members
     } else if (command === 'unhide') {
       m.client.party.hideMembers(false);
       m.reply(`Unhiding Members!`);
+    //Level
     } else if (command === 'level') {
       m.client.party.me.setLevel(parseInt(content, 10));
       m.reply(`Set your level to ${content}!`);
+    //Show Pickaxe
+    } else if (command === 'showpickaxe') {
+      m.party.me.setEmote('EID_IceKing');
+      m.reply(`Showing Pickaxe!`);
     //Info
     } else if (command === 'discord') {
         m.reply(`Discord: https://discord.gg/https://discord.gg/DEDp2UQUx8`);
