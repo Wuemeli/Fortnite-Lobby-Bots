@@ -14,8 +14,6 @@ const fetchCosmetic = async (name, type) => {
   }
 };
 
-
-
 //Commands
 const handleCommand = async (m) => {
   if (!m.content.startsWith('!')) return;
@@ -58,6 +56,20 @@ const handleCommand = async (m) => {
     } else if (command === 'pinkghoul') {
             m.client.party.me.setOutfit('CID_029_Athena_Commando_F_Halloween', [{ channel: 'Material', variant: 'Mat3' }]);
             m.reply(`Set the skin to Pink Ghoul Trooper!`);
+    } else if (command === 'chunlimode') {
+            m.client.party.hideMembers(true);
+            m.client.party.me.setOutfit('CID_028_Athena_Commando_M_ChunLi', [{ channel: 'Material', variant: 'Mat1' }]);
+            m.client.party.me.setEmote('EID_PartyHips');
+            m.reply(`Have Fun (;!. If you want to stop then type the Command !default`);
+    } else if (command === 'default') {
+            m.client.party.hideMembers(false);
+            m.client.party.me.setReadiness(false);
+            m.party.me.setOutfit(config.cid);
+            m.party.me.setBackpack(config.bid);
+            m.party.me.setPickaxe(config.pickaxeId);
+            m.party.me.setLevel(config.level);
+            m.party.me.setBanner(config.banner, config.bannerColor);
+            m.reply(`Set the default settings!`);
     //help
     } else if (command === 'help') {
         m.reply(`HELP COMMANDS Open the Chat to see all the commands!
@@ -70,6 +82,8 @@ const handleCommand = async (m) => {
         !banner <banner> - Sets your banner
         !purpleskull - Sets your skin to Purple Skull Trooper
         !pinkghoul - Sets your skin to Pink Ghoul Trooper
+        !chunlimode - Activates the SUS Mode
+        !default - Sets the default settings
         Fun & Util:
         !ready - Sets you to ready
         !unready - Sets you to unready
@@ -370,6 +384,7 @@ const client10 = new Client({
 //Default Lodaut
 //1
 client1.setLoadout = () => {
+  client1.party.hideMembers(false);
   client1.party.me.setReadiness(false);
   client1.party.me.setOutfit(config.cid);
   client1.party.me.setBackpack(config.bid);
@@ -380,6 +395,7 @@ client1.setLoadout = () => {
 };
 //2
 client2.setLoadout = () => {
+  client2.party.hideMembers(false);
   client2.party.me.setReadiness(false);
   client2.party.me.setOutfit(config.cid);
   client2.party.me.setBackpack(config.bid);
@@ -390,6 +406,7 @@ client2.setLoadout = () => {
 };
 //3
 client3.setLoadout = () => {
+  client3.party.hideMembers(false);
   client3.party.me.setReadiness(false);
   client3.party.me.setOutfit(config.cid);
   client3.party.me.setBackpack(config.bid);
@@ -400,6 +417,7 @@ client3.setLoadout = () => {
 };
 //4
 client4.setLoadout = () => {
+  client4.party.hideMembers(false);
   client4.party.me.setReadiness(false);
   client4.party.me.setOutfit(config.cid);
   client4.party.me.setBackpack(config.bid);
@@ -410,6 +428,7 @@ client4.setLoadout = () => {
 };
 //5
 client5.setLoadout = () => {
+  client5.party.hideMembers(false);
   client5.party.me.setReadiness(false);
   client5.party.me.setOutfit(config.cid);
   client5.party.me.setBackpack(config.bid);
@@ -420,6 +439,7 @@ client5.setLoadout = () => {
 };
 //6
 client6.setLoadout = () => {
+  client6.party.hideMembers(false);
   client6.party.me.setReadiness(false);
   client6.party.me.setOutfit(config.cid);
   client6.party.me.setBackpack(config.bid);
@@ -430,6 +450,7 @@ client6.setLoadout = () => {
 };
 //7
 client7.setLoadout = () => {
+  client7.party.hideMembers(false);
   client7.party.me.setReadiness(false);
   client7.party.me.setOutfit(config.cid);
   client7.party.me.setBackpack(config.bid);
@@ -440,6 +461,7 @@ client7.setLoadout = () => {
 };
 //8
 client8.setLoadout = () => {
+  client8.party.hideMembers(false);
   client8.party.me.setReadiness(false);
   client8.party.me.setOutfit(config.cid);
   client8.party.me.setBackpack(config.bid);
@@ -450,6 +472,7 @@ client8.setLoadout = () => {
 };
 //9
 client9.setLoadout = () => {
+  client9.party.hideMembers(false);
   client9.party.me.setReadiness(false);
   client9.party.me.setOutfit(config.cid);
   client9.party.me.setBackpack(config.bid);
@@ -460,6 +483,7 @@ client9.setLoadout = () => {
 };
 //10
 client10.setLoadout = () => {
+  client10.party.hideMembers(false);
   client10.party.me.setReadiness(false);
   client10.party.me.setOutfit(config.cid);
   client10.party.me.setBackpack(config.bid);
