@@ -471,84 +471,173 @@ client10.setLoadout = () => {
 
 //Friend and Party System
 //1	
+//Friend Request
 client1.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client1.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client1.setLoadout();
+  client1.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client1.on('party:member:left', () => {
+  client1.party.setPrivacy(PrivacySetting.PUBLIC);
+  client1.setLoadout();
 });
 //2
+//Friend Request
 client2.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client2.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client2.setLoadout();
+  client2.party.setPrivacy(PrivacySetting.PRIVATE);
 });
+//Party Leave
+client2.on('party:member:left', () => {
+  client2.party.setPrivacy(PrivacySetting.PUBLIC);
+  client2.setLoadout();
 //3
+//Friend Request
 client3.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client3.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client3.setLoadout();
+  client3.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client3.on('party:member:left', () => {
+  client3.party.setPrivacy(PrivacySetting.PUBLIC);
+  client3.setLoadout();
 });
 //4
+//Friend Request
 client4.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client4.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client4.setLoadout();
+  client4.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client4.on('party:member:left', () => {
+  client4.party.setPrivacy(PrivacySetting.PUBLIC);
+  client4.setLoadout();
 });
 //5
+//Friend Request
 client5.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client5.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client5.setLoadout();
+  client5.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client5.on('party:member:left', () => {
+  client5.party.setPrivacy(PrivacySetting.PUBLIC);
+  client5.setLoadout();
 });
 //6
+//Friend Request
 client6.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client6.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client6.setLoadout();
+  client6.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client6.on('party:member:left', () => {
+  client6.party.setPrivacy(PrivacySetting.PUBLIC);
+  client6.setLoadout();
 });
 //7
+//Friend Request
 client7.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client7.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client7.setLoadout();
+  client7.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client7.on('party:member:left', () => {
+  client7.party.setPrivacy(PrivacySetting.PUBLIC);
+  client7.setLoadout();
 });
 //8
+//Friend Request
 client8.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client8.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client8.setLoadout();
+  client8.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client8.on('party:member:left', () => {
+  client8.party.setPrivacy(PrivacySetting.PUBLIC);
+  client8.setLoadout();
 });
 //9
+//Friend Request
 client9.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client9.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client9.setLoadout();
+  client9.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client9.on('party:member:left', () => {
+  client9.party.setPrivacy(PrivacySetting.PUBLIC);
+  client9.setLoadout();
 });
 //10
+//Friend Request
 client10.on("friend:request", (req) => {
   req.accept()
 });
+//Party System
 client10.on('party:member:joined', () => {
   m.reply(`Hello, to see my Command use !help`);
   m.reply(`Also join my Discord for Updates and Status: https://discord.gg/DEDp2UQUx8`);
+  client10.setLoadout();
+  client10.party.setPrivacy(PrivacySetting.PRIVATE);
+});
+//Party Leave
+client10.on('party:member:left', () => {
+  client10.party.setPrivacy(PrivacySetting.PUBLIC);
+  client10.setLoadout();
 });
 
 
