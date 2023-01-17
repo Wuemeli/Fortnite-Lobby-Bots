@@ -9,7 +9,7 @@ const client = new Client({
 //Ready
 
 client.on("ready", () => {
-  client.user.setActivity("Type {help");
+  client.user.setActivity("Type /help");
   console.log("I am ready!");
 });
 
@@ -17,7 +17,7 @@ client.on("ready", () => {
 
 client.on("messageCreate", (message) => {
 //Help
-  if (message.content.startsWith("{help")) {
+  if (message.content.startsWith("/help")) {
     message.channel.send("commands:\n/featured\n/daily\n/specialFeatured\n/status\n/list");
 //Item Shop
   } if (message.content.startsWith("/daily")) {
