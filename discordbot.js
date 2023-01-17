@@ -18,23 +18,23 @@ client.on("ready", () => {
 client.on("messageCreate", (message) => {
 //Help
   if (message.content.startsWith("{help")) {
-    message.channel.send("commands:\n{featured\n{daily\n{specialFeatured\n{status\n{list");
+    message.channel.send("commands:\n/featured\n/daily\n/specialFeatured\n/status\n/list");
 //Item Shop
-  } if (message.content.startsWith("{daily")) {
+  } if (message.content.startsWith("/daily")) {
     fortniteStuff("daily", message);
-  } if (message.content.startsWith("{featured")) {
+  } if (message.content.startsWith("/featured")) {
     fortniteStuff("featured", message);
-  } if (message.content.startsWith("{specialFeatured")) {
+  } if (message.content.startsWith("/specialFeatured")) {
     fortniteStuff("specialFeatured", message);
 //Fortnite Bot Status and List
 //Status
-  } if (message.content.startsWith("{status")) {
+  } if (message.content.startsWith("/status")) {
     message.channel.send("All Fortnite Bots Are Online.");
 //List
-  } if (message.content.startsWith("{list")) {
+  } if (message.content.startsWith("/list")) {
     message.channel.send("Fortnite Bots:\nFNKarmaBot1\nFNKarmaBot2\nFNKarmaBot3\nFNKarmaBot4\nFNKarmaBot5\nFNKarmaBot6\nFNKarmaBot7\nFNKarmaBot8\nFNKarmaBot9\nFNKarmaBot10");
 //Invalid Command
-  } if (message.content.startsWith("{")) {
+  } if (message.content.startsWith("/")) {
     message.channel.send("Invalid Command");
   }
 });
