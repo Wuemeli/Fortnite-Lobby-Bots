@@ -1,7 +1,7 @@
 {
   "name": "fortnite-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "An Fortnite and an Discord Bot for the Item Shop and Lobby Bots.",
   "main": "main.js",
   "scripts": {
     "start": "concurrently --kill-others \"npm run fortnitebot\" \"npm run discordbot\"",
