@@ -153,70 +153,70 @@ const handleCommand = async (m) => {
 (async () => {
   let auth1;
   try {
-    auth1 = { deviceAuth: JSON.parse(await readFile('./deviceAuth.json')) };
+    auth1 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth.json')) };
   } catch (e) {
     auth1 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 1: ') };
   }
 
     let auth2;
     try {
-        auth2 = { deviceAuth: JSON.parse(await readFile('./deviceAuth2.json')) };
+        auth2 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth2.json')) };
     } catch (e) {
         auth2 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 2: ') };
     }
 
     let auth3;
     try {
-        auth3 = { deviceAuth: JSON.parse(await readFile('./deviceAuth3.json')) };
+        auth3 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth3.json')) };
     } catch (e) {
         auth3 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 3: ') };
     }
 
     let auth4;
     try {
-        auth4 = { deviceAuth: JSON.parse(await readFile('./deviceAuth4.json')) };
+        auth4 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth4.json')) };
     } catch (e) {
         auth4 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 4: ') };
     }
 
     let auth5;
     try {
-        auth5 = { deviceAuth: JSON.parse(await readFile('./deviceAuth5.json')) };
+        auth5 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth5.json')) };
     } catch (e) {
         auth5 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 5: ') };
     }
 
     let auth6;
     try {
-        auth6 = { deviceAuth: JSON.parse(await readFile('./deviceAuth6.json')) };
+        auth6 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth6.json')) };
     } catch (e) {
         auth6 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 6: ') };
     }
 
     let auth7;
     try {
-        auth7 = { deviceAuth: JSON.parse(await readFile('./deviceAuth7.json')) };
+        auth7 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth7.json')) };
     } catch (e) {
         auth7 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 7: ') };
     }
 
     let auth8;
     try {
-        auth8 = { deviceAuth: JSON.parse(await readFile('./deviceAuth8.json')) };
+        auth8 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth8.json')) };
     } catch (e) {
         auth8 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 8: ') };
     }
 
     let auth9;
     try {
-        auth9 = { deviceAuth: JSON.parse(await readFile('./deviceAuth9.json')) };
+        auth9 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth9.json')) };
     } catch (e) {
         auth9 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 9: ') };
     }
 
     let auth10;
     try {
-        auth10 = { deviceAuth: JSON.parse(await readFile('./deviceAuth10.json')) };
+        auth10 = { deviceAuth: JSON.parse(await readFile('./auths/deviceAuth10.json')) };
     } catch (e) {
         auth10 = { authorizationCode: async () => Client.consoleQuestion('Please enter an Auth Code for Client 10: ') };
     }
@@ -368,43 +368,43 @@ const client10 = new Client({
 
 //Events
 //1
-  client1.on('deviceauth:created', (da) => writeFile('./deviceAuth.json', JSON.stringify(da, null, 2)));
+  client1.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth.json', JSON.stringify(da, null, 2)));
   client1.on('party:member:message', handleCommand);
   client1.on('friend:message', handleCommand);
 //2
-  client2.on('deviceauth:created', (da) => writeFile('./deviceAuth2.json', JSON.stringify(da, null, 2)));
+  client2.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth2.json', JSON.stringify(da, null, 2)));
   client2.on('party:member:message', handleCommand);
   client2.on('friend:message', handleCommand);
 //3
-  client3.on('deviceauth:created', (da) => writeFile('./deviceAuth3.json', JSON.stringify(da, null, 2)));
+  client3.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth3.json', JSON.stringify(da, null, 2)));
   client3.on('party:member:message', handleCommand);
   client3.on('friend:message', handleCommand);
 //4
-  client4.on('deviceauth:created', (da) => writeFile('./deviceAuth4.json', JSON.stringify(da, null, 2)));
+  client4.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth4.json', JSON.stringify(da, null, 2)));
   client4.on('party:member:message', handleCommand);
   client4.on('friend:message', handleCommand);
 //5
-  client5.on('deviceauth:created', (da) => writeFile('./deviceAuth5.json', JSON.stringify(da, null, 2)));
+  client5.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth5.json', JSON.stringify(da, null, 2)));
   client5.on('party:member:message', handleCommand);
   client5.on('friend:message', handleCommand);
 //6
-  client6.on('deviceauth:created', (da) => writeFile('./deviceAuth6.json', JSON.stringify(da, null, 2)));
+  client6.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth6.json', JSON.stringify(da, null, 2)));
   client6.on('party:member:message', handleCommand);
   client6.on('friend:message', handleCommand);
 //7
-  client7.on('deviceauth:created', (da) => writeFile('./deviceAuth7.json', JSON.stringify(da, null, 2)));
+  client7.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth7.json', JSON.stringify(da, null, 2)));
   client7.on('party:member:message', handleCommand);
   client7.on('friend:message', handleCommand);
 //8
-  client8.on('deviceauth:created', (da) => writeFile('./deviceAuth8.json', JSON.stringify(da, null, 2)));
+  client8.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth8.json', JSON.stringify(da, null, 2)));
   client8.on('party:member:message', handleCommand);
   client8.on('friend:message', handleCommand);
 //9
-  client9.on('deviceauth:created', (da) => writeFile('./deviceAuth9.json', JSON.stringify(da, null, 2)));
+  client9.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth9.json', JSON.stringify(da, null, 2)));
   client9.on('party:member:message', handleCommand);
   client9.on('friend:message', handleCommand);
 //10
-  client10.on('deviceauth:created', (da) => writeFile('./deviceAuth10.json', JSON.stringify(da, null, 2)));
+  client10.on('deviceauth:created', (da) => writeFile('./auths/deviceAuth10.json', JSON.stringify(da, null, 2)));
   client10.on('party:member:message', handleCommand);
   client10.on('friend:message', handleCommand);
 
