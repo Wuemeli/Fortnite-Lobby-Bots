@@ -1,6 +1,6 @@
 /* eslint-disable */
 const { readFile, writeFile } = require('fs').promises;
-const axios = require('axios').default;
+const axios = require('axios');
 const { Client } = require('fnbr');
 const config = require("./config.json");
 
