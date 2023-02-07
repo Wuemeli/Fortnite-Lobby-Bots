@@ -1,0 +1,10 @@
+version: '3'
+services:
+  web:
+    image: node:18
+    ports:
+      - "3999:3999"
+    working_dir: /app
+    volumes:
+      - ./:/app
+    command: ["node", "server.js"]
