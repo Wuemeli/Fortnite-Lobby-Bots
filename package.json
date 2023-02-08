@@ -4,9 +4,7 @@
   "description": "An Fortnite and an Discord Bot for the Item Shop and Lobby Bots.",
   "main": "main.js",
   "scripts": {
-    "start": "concurrently --kill-others \"npm run fortnitebot\" \"npm run discordbot\"",
-    "fortnitebot": "node main.js",
-    "discordbot": "node discordbot.js"
+    "start": "node main.js"
   },
   "author": "Wuemeli",
   "dependencies": {
@@ -14,8 +12,5 @@
     "discord.js": "^14.7.1",
     "fnbr": "^3.1.3",
     "fs": "0.0.1-security"
-  },
-  "devDependencies": {
-    "concurrently": "^7.6.0"
   }
 }
