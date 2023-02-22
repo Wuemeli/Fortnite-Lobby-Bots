@@ -6,29 +6,48 @@ The bot uses the fnbr package, which provides a convenient way to interact with 
 ## Commands
 The bot responds to the following commands:
 
-!skin <skin> - sets the player's skin to the specified skin
+!help - Shows this message
 
-!emote <emote> - sets the player's emote to the specified emote
+Cosemtics:
+!skin <skin> - Sets your skin
 
-!backpack <backpack> - sets the player's backpack to the specified backpack
+!emote <emote> - Sets your emote
 
-!emoji <emoji> - sets the player's emoji to the specified emoji
+!backpack <backpack> - Sets your backpack
 
-!banner <banner> - sets the player's banner to the specified banner
+!emoji <emoji> - Sets your emoji
 
-!pickaxe <pickaxe> - sets the player's pickaxe to the specified pickaxe
+!banner <banner> - Sets your banner
 
-!purpleskull - sets the player's skin to the Purple Skull Trooper
+!pickaxe <pickaxe> - Sets your pickaxe
 
-!pinkghoul - sets the player's skin to the Pink Ghoul Trooper
+!purpleskull - Sets your skin to Purple Skull Trooper
 
-!chunlimode - enables the Chun-Li mode (sets the player's outfit to Chun-Li, hides other players, and sets an emote)
+!pinkghoul - Sets your skin to Pink Ghoul Trooper
 
-!default - sets the player's settings back to the default configuration
+!chunlimode - Activates the SUS Mode
 
-!help - displays the list of available commands
+!default - Sets the default settings
 
-Note that for the !skin, !emote, !backpack, !emoji, and !banner commands, the argument should be the name of the cosmetic item that you want to set (e.g., !skin Dark Voyager).
+Fun & Util:
+
+!ready - Sets you to ready
+
+!unready - Sets you to unready
+
+!gift - Gifts the whole Lobby the Item Shop
+
+!hide - Hides Members
+
+!unhide - Unhides Members
+
+!level <level> - Sets your level
+
+!showpickaxe - Shows your pickaxe
+
+Info:
+
+!discord - Shows the discord link
 
 ## Usage
 To use the Fortnite Lobby Bot, follow these steps:
