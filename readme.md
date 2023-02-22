@@ -34,9 +34,13 @@ Note that for the !skin, !emote, !backpack, !emoji, and !banner commands, the ar
 To use the Fortnite Lobby Bot, follow these steps:
 
 Download the bot's code from the repository.
+
 Install the dependencies by running ``npm install`` in the bot's directory.
+
 Start the bot by running ``npm start``.
+
 Follow the bot's prompts to set up each instance.
+
 After setting up the bot, you can copy the files to a server and run ``docker build -t fortnite-bot .`` to build a Docker image. Then, start the bot with ``docker run -d --name my-fortnite-bot fortnite-bot.``
 
 For more information on using Docker, please refer to the Docker documentation.
