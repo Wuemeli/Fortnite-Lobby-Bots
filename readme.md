@@ -6,7 +6,7 @@ The bot uses the fnbr package, which provides a convenient way to interact with 
 ## Commands
 The bot responds to the following commands:
 
-``!skin <skin>`` - sets the player's skin to the specified skin
+> !skin <skin> - sets the player's skin to the specified skin
 ``!emote <emote>`` - sets the player's emote to the specified emote
 !backpack <backpack>`` - sets the player's backpack to the specified backpack
 !emoji <emoji>`` - sets the player's emoji to the specified emoji
