@@ -6,17 +6,28 @@ The bot uses the fnbr package, which provides a convenient way to interact with 
 ## Commands
 The bot responds to the following commands:
 
-> !skin <skin> - sets the player's skin to the specified skin
-``!emote <emote>`` - sets the player's emote to the specified emote
-!backpack <backpack>`` - sets the player's backpack to the specified backpack
-!emoji <emoji>`` - sets the player's emoji to the specified emoji
+!skin <skin> - sets the player's skin to the specified skin
+
+!emote <emote> - sets the player's emote to the specified emote
+
+!backpack <backpack> - sets the player's backpack to the specified backpack
+
+!emoji <emoji> - sets the player's emoji to the specified emoji
+
 !banner <banner> - sets the player's banner to the specified banner
+
 !pickaxe <pickaxe> - sets the player's pickaxe to the specified pickaxe
+
 !purpleskull - sets the player's skin to the Purple Skull Trooper
+
 !pinkghoul - sets the player's skin to the Pink Ghoul Trooper
+
 !chunlimode - enables the Chun-Li mode (sets the player's outfit to Chun-Li, hides other players, and sets an emote)
+
 !default - sets the player's settings back to the default configuration
+
 !help - displays the list of available commands
+
 Note that for the !skin, !emote, !backpack, !emoji, and !banner commands, the argument should be the name of the cosmetic item that you want to set (e.g., !skin Dark Voyager).
 
 ## Usage
